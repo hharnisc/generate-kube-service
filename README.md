@@ -1,2 +1,3 @@
-# generate-kube-service
-Yeoman generator to build and deploy a node service to kubernetes
+# generator-kube-service
+
+Yeoman generator to build and deploy a node service to [Kubernetes](kubernetes.io)
