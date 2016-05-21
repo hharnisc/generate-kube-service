@@ -83,14 +83,6 @@ module.exports = generators.Base.extend({
                     this.strings
                   );
                 }.bind(this);
-    copy('service/package.json');
-    copy('service/.eslint');
-    copy('service/.babelrc');
-    copy('service/src/index.js');
-    copy('service/src/logger.js');
-    copy('service/src/Router.js');
-    copy('service/src/symbols.js');
-    copy('service/test/Router.test.js');
     copy('rs/service.yml');
     copy('service/integration-test/.babelrc');
     copy('service/integration-test/docker-compose.yml');
@@ -98,6 +90,18 @@ module.exports = generators.Base.extend({
     copy('service/integration-test/index.js');
     copy('service/integration-test/package.sh');
     copy('service/integration-test/test.sh');
+    copy('service/src/index.js');
+    copy('service/src/logger.js');
+    copy('service/src/Router.js');
+    copy('service/src/symbols.js');
+    copy('service/test/Router.test.js');
+    copy('service/.babelrc');
+    copy('service/.eslint');
+    copy('service/package.json');
+    copy('.gitignore');
+    copy('Dockerfile');
+    copy('local_deploy.sh');
+    copy('service.rc.yml');
   },
 
   default: function() {
