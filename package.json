@@ -16,5 +16,6 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/hharnisc/generator-kube-service"
-  }
+  },
+  "license": "MIT"
 }

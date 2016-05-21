@@ -46,6 +46,5 @@
     "email": "<%= authorEmail %>",
     "url": "<%= authorUrl %>"
   },
-  "homepage": "<%= baseUrl %>",
-  "license": "MIT"
+  "homepage": "<%= baseUrl %>"
 }
