@@ -86,10 +86,12 @@ module.exports = generators.Base.extend({
     copy('service/package.json');
     copy('service/.eslint');
     copy('service/.babelrc');
+    copy('service/src/index.js');
     copy('service/src/logger.js');
     copy('service/src/Router.js');
     copy('service/src/symbols.js');
     copy('service/test/Router.test.js');
+    copy('rs/service.yml');
   },
 
   default: function() {
