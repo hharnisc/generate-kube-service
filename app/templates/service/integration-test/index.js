@@ -1,0 +1,56 @@
+import test from 'tape';
+import tapSpec from 'tap-spec';
+import requestPromise from 'request-promise';
+import retryPromise from 'retry-promise';
+
+test.createStream()
+  .pipe(tapSpec())
+  .pipe(process.stdout);
+
+const before = test;
+const after = test;
+const host = process.env.HOST || '<%= name %>';
+const port = process.env.PORT || <%= port %>;
+
+before('before', (t) => {
+  const healthCheck = (attempt) => {
+    if (attempt > 1) {
+      t.comment('health check failed retrying...');
+    }
+    return requestPromise({
+      method: 'GET',
+      uri: `http://${host}:${port}/v1/health`,
+      json: true,
+      resolveWithFullResponse: true,
+    }).then((response) => {
+      if (response.statusCode !== 204) {
+        throw new Error('Health Check Failed');
+      }
+    });
+  };
+  return retryPromise({ max: 5, backoff: 1000 }, healthCheck)
+    .then(() => {
+      t.pass('test setup');
+      t.end();
+    })
+    .catch((error) => t.fail(error));
+});
+
+test('GET /health', (t) => {
+  requestPromise({
+    method: 'POST',
+    uri: `http://${host}:${port}/v1/health`,
+    json: true,
+    resolveWithFullResponse: true,
+  })
+    .then((response) => {
+      t.equal(response.statusCode, 204, 'has statusCode 204');
+      t.deepEqual(response.body, {}, 'has empty response')
+    })
+    .catch((error) => t.fail(error));
+});
+
+after('after', (t) => {
+  t.pass('test cleanup');
+  t.end();
+});

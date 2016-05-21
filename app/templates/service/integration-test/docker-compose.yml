@@ -1,0 +1,8 @@
+integration-tester:
+  build: .
+  links:
+    - <%= name %>
+<%= name %>:
+  build: ..
+  ports:
+    - "<%= port %>:<%= port %>"

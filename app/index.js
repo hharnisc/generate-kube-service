@@ -92,6 +92,12 @@ module.exports = generators.Base.extend({
     copy('service/src/symbols.js');
     copy('service/test/Router.test.js');
     copy('rs/service.yml');
+    copy('service/integration-test/.babelrc');
+    copy('service/integration-test/docker-compose.yml');
+    copy('service/integration-test/Dockerfile');
+    copy('service/integration-test/index.js');
+    copy('service/integration-test/package.sh');
+    copy('service/integration-test/test.sh');
   },
 
   default: function() {
