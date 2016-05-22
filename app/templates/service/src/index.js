@@ -11,7 +11,7 @@ const argv = minimist(process.argv.slice(2), {
   },
 });
 
-const router = new Router({ tokenManager });
+const router = new Router();
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

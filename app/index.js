@@ -90,7 +90,7 @@ module.exports = generators.Base.extend({
     copy('service/integration-test/package.json');
     copy('service/integration-test/test.sh');
     copy('service/src/index.js');
-    copy('service/src/logger.js');
+    copy('service/src/logging.js');
     copy('service/src/Router.js');
     copy('service/src/symbols.js');
     copy('service/test/Router.test.js');
