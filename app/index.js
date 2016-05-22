@@ -16,8 +16,7 @@ module.exports = generators.Base.extend({
   */
   prompting: function () {
     // See: https://github.com/SBoudrias/Inquirer.js
-    var done = this.async();
-    this.prompt([
+    return this.prompt([
       {
         type: 'input',
         name: 'name',
@@ -57,7 +56,8 @@ module.exports = generators.Base.extend({
         filter: _.words,
         default: 'service',
       }
-    ], function (answers) {
+    ])
+    .then(function (answers) {
         // Store values.
         answers.name = answers.name || 'unnamed';
         answers.displayName = answers.displayName || answers.name;
@@ -67,7 +67,6 @@ module.exports = generators.Base.extend({
           answers.baseUrl = answers.githubUrl.split('.git')[0]
         }
         this.strings = answers;
-        done();
     }.bind(this));
   },
 
@@ -88,7 +87,7 @@ module.exports = generators.Base.extend({
     copy('service/integration-test/docker-compose.yml');
     copy('service/integration-test/Dockerfile');
     copy('service/integration-test/index.js');
-    copy('service/integration-test/package.sh');
+    copy('service/integration-test/package.json');
     copy('service/integration-test/test.sh');
     copy('service/src/index.js');
     copy('service/src/logger.js');
@@ -96,7 +95,7 @@ module.exports = generators.Base.extend({
     copy('service/src/symbols.js');
     copy('service/test/Router.test.js');
     copy('service/.babelrc');
-    copy('service/.eslint');
+    copy('service/.eslintrc');
     copy('service/package.json');
     copy('.gitignore');
     copy('Dockerfile');
