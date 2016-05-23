@@ -3,6 +3,6 @@ integration-tester:
   links:
     - <%= name %>
 <%= name %>:
-  build: ..
+  build: ../..
   ports:
     - "<%= port %>:<%= port %>"

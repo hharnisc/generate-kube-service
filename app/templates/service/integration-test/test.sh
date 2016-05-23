@@ -9,6 +9,7 @@ trap 'cleanup ; printf "${RED}Tests Failed For Unexpected Reasons${NC}\n" ; exit
 docker-compose -p ci build && docker-compose -p ci up -d
 TEST_EXIT_CODE=`docker wait ci_integration-tester_1`
 docker logs ci_integration-tester_1
+# TODO: make sure null/empty is handled
 if [ "$TEST_EXIT_CODE" -ne 0 ]; then
   printf "${RED}Tests Failed${NC} - Exit Code:$TEST_EXIT_CODE\n"
 else

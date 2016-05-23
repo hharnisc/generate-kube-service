@@ -34,7 +34,13 @@ module.exports = generators.Base.extend({
         name: 'port',
         message: 'Service Port',
         default: 8080,
-      }, {
+      },
+      {
+       type: 'input',
+       name: 'dockerHandle',
+       message: 'Docker Handle',
+      }
+      {
         type: 'input',
         name: 'authorName',
         message: 'Author Name',

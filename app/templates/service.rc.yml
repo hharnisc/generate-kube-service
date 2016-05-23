@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
         - name: <%= name %>
-          image: chant/auth
+          image: <%= dockerHandle %>/<%= name %>
           ports:
             - containerPort: <%= port %>

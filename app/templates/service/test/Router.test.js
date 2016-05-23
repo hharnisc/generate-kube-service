@@ -16,12 +16,6 @@ describe('Router', () => {
     expect(Router).not.toEqual({});
   });
 
-  it('does initialize a tokenManager', () => {
-    const tokenManager = 'manager';
-    const router = new Router({ tokenManager });
-    expect(router.tokenManager).toBe(tokenManager);
-  });
-
   it('does have a method to initialize routes', () => {
     const router = new Router();
     expect(router[INIT_ROUTES]).toBeDefined();

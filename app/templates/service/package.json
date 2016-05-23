@@ -46,5 +46,12 @@
     "email": "<%= authorEmail %>",
     "url": "<%= authorUrl %>"
   },
-  "homepage": "<%= baseUrl %>"
+  "homepage": "<%= baseUrl %>",
+  "jest": {
+    "testDirectoryName": "test",
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/integration-test/"
+    ]
+  }
 }
