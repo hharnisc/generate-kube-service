@@ -1,2 +1,2 @@
-docker build -t <%= authorName %>/<%= name %> . &&\
+docker build -t <%= dockerHandle %>/<%= name %> . &&\
 spread build .
