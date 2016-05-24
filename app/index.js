@@ -94,6 +94,7 @@ module.exports = generators.Base.extend({
     copy('service/integration-test/Dockerfile');
     copy('service/integration-test/index.js');
     copy('service/integration-test/package.json');
+    copy('service/integration-test/README.md');
     copy('service/integration-test/test.sh');
     copy('service/src/healthRouter.js');
     copy('service/src/index.js');
@@ -105,9 +106,11 @@ module.exports = generators.Base.extend({
     copy('service/.babelrc');
     copy('service/.eslintrc');
     copy('service/package.json');
+    copy('service/README.md');
     copy('.gitignore');
     copy('Dockerfile');
     copy('local_deploy.sh');
+    copy('README.md');
     copy('service.rc.yml');
   },
 

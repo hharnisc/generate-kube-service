@@ -44,7 +44,7 @@ test('GET /v1/thetime', (t) => {
     resolveWithFullResponse: true,
   })
     .then((response) => {
-      t.equal(response.statusCode, 204, 'has statusCode 204');
+      t.equal(response.statusCode, 200, 'has statusCode 200');
       t.deepEqual(
         Object.keys(response.body).sort(),
         ['time'],

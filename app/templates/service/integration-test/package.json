@@ -2,9 +2,9 @@
   "name": "<%= name %>-integration-test",
   "version": "0.0.1",
   "description": "<%= name %> integration tests",
-  "main": "test.js",
+  "main": "index.js",
   "scripts": {
-    "test": "./node_modules/tape/bin/tape test/test.js -r babel-register"
+    "test": "./node_modules/tape/bin/tape index.js -r babel-register"
   },
   "dependencies": {
     "babel-cli": "^6.7.5",
