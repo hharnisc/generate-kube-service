@@ -10,6 +10,8 @@ export default class Router {
   }
 
   [INIT_ROUTES]() {
-    this.router.get('/health', (req, res) => res.status(204).send());
+    this.router.get('/thetime', (req, res) => res.status(200).send({
+      time: Date.now(),
+    }));
   }
 }

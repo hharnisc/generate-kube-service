@@ -19,7 +19,7 @@ before('before', (t) => {
     }
     return requestPromise({
       method: 'GET',
-      uri: `http://${host}:${port}/v1/health`,
+      uri: `http://${host}:${port}/health`,
       json: true,
       resolveWithFullResponse: true,
     }).then((response) => {
@@ -36,16 +36,20 @@ before('before', (t) => {
     .catch((error) => t.fail(error));
 });
 
-test('GET /health', (t) => {
+test('GET /v1/thetime', (t) => {
   requestPromise({
     method: 'POST',
-    uri: `http://${host}:${port}/v1/health`,
+    uri: `http://${host}:${port}/v1/thetime`,
     json: true,
     resolveWithFullResponse: true,
   })
     .then((response) => {
       t.equal(response.statusCode, 204, 'has statusCode 204');
-      t.deepEqual(response.body, {}, 'has empty response')
+      t.deepEqual(
+        Object.keys(response.body).sort(),
+        ['time'],
+        'response has expected keys'
+      );
     })
     .catch((error) => t.fail(error));
 });

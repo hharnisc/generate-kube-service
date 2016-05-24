@@ -39,7 +39,7 @@ module.exports = generators.Base.extend({
        type: 'input',
        name: 'dockerHandle',
        message: 'Docker Handle',
-      }
+      },
       {
         type: 'input',
         name: 'authorName',
@@ -95,11 +95,13 @@ module.exports = generators.Base.extend({
     copy('service/integration-test/index.js');
     copy('service/integration-test/package.json');
     copy('service/integration-test/test.sh');
+    copy('service/src/healthRouter.js');
     copy('service/src/index.js');
     copy('service/src/logging.js');
     copy('service/src/Router.js');
     copy('service/src/symbols.js');
     copy('service/test/Router.test.js');
+    copy('service/test/healthRouter.test.js');
     copy('service/.babelrc');
     copy('service/.eslintrc');
     copy('service/package.json');
