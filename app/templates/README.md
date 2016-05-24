@@ -104,14 +104,26 @@ TODO
 
 ## API
 
-### POST /v1/health
+### GET /health
 
 A health check
 
 #### request
 
-No Parameters
+No parameters
 
 #### response
 
 204 - Empty
+
+### GET /v1/thetime
+
+Get a unix timestamp
+
+#### request
+
+No parameters
+
+#### response
+
+- **time** - *unix timestamp* - current time
