@@ -23,5 +23,6 @@ $ npm link
 
 ## TODO
 
+- Local deploy should just work, but you have to push images to docker hub for some reason. [see this localkube issue](https://github.com/redspread/localkube/issues/64)
 - Hot reload in localkube
 - Deploy to production
