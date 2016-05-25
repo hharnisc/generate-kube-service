@@ -20,3 +20,8 @@ $ npm link
 1. Create a blank repo on github, clone to local system.
 2. Run `yo kube-service`
 3. Commit and push.
+
+## TODO
+
+- Hot reload in localkube
+- Deploy to production
