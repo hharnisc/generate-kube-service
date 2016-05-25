@@ -23,7 +23,7 @@ before('before', (t) => {
       json: true,
       resolveWithFullResponse: true,
     }).then((response) => {
-      if (response.statusCode !== 204) {
+      if (response.statusCode !== 200) {
         throw new Error('Health Check Failed');
       }
     });
@@ -38,7 +38,7 @@ before('before', (t) => {
 
 test('GET /v1/thetime', (t) => {
   requestPromise({
-    method: 'POST',
+    method: 'GET',
     uri: `http://${host}:${port}/v1/thetime`,
     json: true,
     resolveWithFullResponse: true,
@@ -50,6 +50,7 @@ test('GET /v1/thetime', (t) => {
         ['time'],
         'response has expected keys'
       );
+      t.end();
     })
     .catch((error) => t.fail(error));
 });

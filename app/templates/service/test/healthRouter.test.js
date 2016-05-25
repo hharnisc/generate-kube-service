@@ -20,7 +20,7 @@ describe('healthRouter', () => {
     request(app)
       .get('/health')
       .expect((res) => {
-        expect(res.status).toEqual(204);
+        expect(res.status).toEqual(200);
         expect(res.body).toEqual({});
       })
       .end(done);
