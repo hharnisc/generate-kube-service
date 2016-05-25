@@ -87,7 +87,7 @@ $ npm install
 Start the server
 
 ```sh
-$ JWT_SECRET=mysecret npm start
+$ npm start
 ```
 
 ## Deploy Locally
