@@ -18,5 +18,6 @@ spec:
       containers:
         - name: <%= name %>
           image: <%= dockerHandle %>/<%= name %>
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: <%= port %>
