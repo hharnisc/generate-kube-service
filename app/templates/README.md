@@ -114,7 +114,7 @@ No parameters
 
 #### response
 
-204 - Empty
+200 - Empty
 
 ### GET /v1/thetime
 
